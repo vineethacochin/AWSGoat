@@ -87,11 +87,11 @@ jobs:
       continue-on-error: false
 
     # Copy tfstate file to s3 bucket
-    - name: Copy terraform.tfstate file to s3bucket
-      if: always()
-      run: |
-        cd modules/${{ github.event.inputs.module }}
-        aws s3 cp ./terraform.tfstate s3://do-not-delete-awsgoat-state-files-${{ env.ACCOUNT_ID }}/terraform.tfstate 
+    # - name: Copy terraform.tfstate file to s3bucket
+     # if: always()
+     # run: |
+        #cd modules/${{ github.event.inputs.module }}
+        #aws s3 cp ./terraform.tfstate s3://do-not-delete-awsgoat-state-files-${{ env.ACCOUNT_ID }}/terraform.tfstate 
 
     # Terraform Output the API Gateway url
     - name: Application URL
